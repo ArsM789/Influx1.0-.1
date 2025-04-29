@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import url("./aside/aside.css");
+@import url("./main/main.css");
+@import url("./player/player.css");
+@import url("./main/musicList/musick.css");
+@import url("modal/modal.css");
+
+/* Добавляем анимацию вращения */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Стили для кнопки replay */
+.replay-button-button {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.replay-button-button.active {
+  color: var(--color-accent) !important;
+}
+
+.replay-button-button.spinning {
+  animation: spin 0.5s ease-in-out;
+}
+
+/* Добавляем эффект пульсации при активном состоянии */
+.replay-button-button.active i {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Анимация появления */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:root {
+  --font-family-main: "Poppins", sans-serif;
+  --font-family-secondary: "Nunito", sans-serif;
+  --font-size-ssmall: 12px;
+  --font-size-small: 14px;
+  --font-size-medium: 16px;
+  --font-size-large: 18px;
+  --font-size-xlarge: 20px;
+  --font-size-xxlarge: 24px;
+  --font-size-xxxlarge: 32px;
+
+  --color-accent: #2fd973;
+  --color-background: #0a0d14;
+  --color-text: #f8f8f8;
+  --color-text-secondary: #22262b;
+  --color-text-tertiary: #535353;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
+body {
+  font-family: var(--font-family-main);
+  color: var(--color-text);
+  font-size: var(--font-size-medium);
+  line-height: 1.5;
+  padding: 10px 5px;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  background: var(--color-background);
+  /* animation: gradient-background 18s infinite;
+  background-size: 400% 400%;
+  background-image: linear-gradient(
+    -45deg,
+    var(--color-accent) 0%,
+    var(--color-text-secondary) 25%,
+    var(--color-background) 51%,
+    var(--color-text-tertiary) 100%
+  ); */
+
+  ::-moz-selection {
+    background-color: #535353;
+    color: #2fd973;
+  }
+
+  ::selection {
+    background-color: #535353;
+    color: #2fd973;
+  }
+
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  position: fixed;
+  width: 100%;
+  
+  /* Отключаем выделение текста */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  
+  /* Отключаем масштабирование */
+  touch-action: manipulation;
+
+  @media (max-width: 480px) {
+    overscroll-behavior-y: none;
+  }
+}
+
+/* Для iOS устройств */
+@supports (-webkit-touch-callout: none) {
+  body {
+    height: -webkit-fill-available;
+  }
+}
+
+/* Отключаем pull-to-refresh */
+@media screen and (max-width: 480px) {
+  html, body {
+    overscroll-behavior-y: none;
+  }
+}
+
+.wrapper {
+  opacity: 0;
+  animation: fadeInUp 0.7s cubic-bezier(0.4, 2, 0.6, 1) 0.1s forwards;
+
+  @media (max-width: 768px) {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 10px;
+}
+
+/* Анимация смены трека */
+.cover img,
+.track__name,
+.artist {
+  transition: opacity 0.3s, filter 0.3s;
+}
+.cover img.track-fade,
+.track__name.track-fade,
+.artist.track-fade {
+  opacity: 0;
+  filter: blur(4px);
+}

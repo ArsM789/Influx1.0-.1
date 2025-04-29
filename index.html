@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,viewport-fit=cover"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#232323" />
+    <meta
+      name="description"
+      content="InfluxMusick - это музыкальный плеер, который позволяет вам слушать музыку в полноэкранном режиме на вашем мобильном устройстве."
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="apple-mobile-web-app-title" content="InfluxMusick" />
+    <link rel="stylesheet" href="style/style_main.css" />
+    <link rel="icon" href="assets/logo/influxdb-icon.svg" />
+    <link rel="apple-touch-icon" href="assets/logo/influxdb-icon.svg" />
+    <link rel="manifest" href="manifest.json" />
+    <title>InfluxMusick</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <aside class="aside">
+        <div class="aside-header">
+          <div class="logo">
+            <h3><span>Influx</span>Musick</h3>
+          </div>
+          <div class="menu">
+            <nav id="menu-list">
+              <div class="menu-list-item-1">
+                <ul class="menu-list-item-1-list">
+                  <li>
+                    <a href="#" class="active"
+                      ><span class="menu-list-item-1-list-icon active"
+                        ><i class="fa-solid fa-music"></i></span
+                      >Library</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><span class="menu-list-item-1-list-icon"
+                        ><i class="fa-solid fa-music"></i></span
+                      >Songs</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><span class="menu-list-item-1-list-icon"
+                        ><i class="fa-solid fa-music"></i></span
+                      >Albums</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><span class="menu-list-item-1-list-icon"
+                        ><i class="fa-solid fa-music"></i></span
+                      >Artists</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><span class="menu-list-item-1-list-icon"
+                        ><i class="fa-solid fa-music"></i></span
+                      >Playlists</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div class="menu-list-item-2">
+                <h3>в разработке</h3>
+                <ul class="menu-list-item-2-list">
+                  <li>
+                    <a href="#"
+                      ><span class="menu-list-item-2-list-icon"
+                        ><i class="fa-solid fa-music"></i></span
+                      >Songs</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><span class="menu-list-item-2-list-icon"
+                        ><i class="fa-solid fa-music"></i></span
+                      >Albums</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><span class="menu-list-item-2-list-icon"
+                        ><i class="fa-solid fa-music"></i></span
+                      >Artists</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><span class="menu-list-item-2-list-icon"
+                        ><i class="fa-solid fa-music"></i></span
+                      >Playlists</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+          <div class="menu-list-button">
+            <button type="button" id="btn-sidebar-toggle">
+              Поддержать проект
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <div class="modal-window">
+        <div class="modal-window-content">
+          <div class="modal-window-header">
+            <h3>Обновление 1.0.1</h3>
+            <button class="modal-close" title="Закрыть">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <div class="modal-window-body">
+            <p>
+              в этом обновлении были добавлены функции повтора трека, перемешивания
+              треков, а также добавлены приятные анимации и изменения дизайна плеера
+              в мобильной версии.
+            </p>
+            <span>если у вас будет баг или ошибка, то напишите мне в телеграм</span>
+            <a
+              href="https://t.me/+MzXBO1uJUwIyNGMy"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="telegram-button"
+            >
+              <i class="fa-brands fa-telegram"></i>
+              писать сюда
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <main class="main">
+        <section class="artist-big-block">
+          <div class="artist-big-block-content">
+            <div class="verified-artist">
+              <p>Verified Artist</p>
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="artist-big-block-content-info">
+              <h3>Destroy Lonely</h3>
+              <p>My favorite artist</p>
+            </div>
+          </div>
+        </section>
+        <section class="musick-list">
+          <div class="musick-list-item">
+            <div class="musick-list-item-content">
+              <div class="musick-list-item-content-1">
+                <div class="track-info">
+                  <div class="id-track">1</div>
+                  <div class="track__main-info">
+                    <div class="cover-track">
+                      <img
+                        id="cover-track-1"
+                        src="assets/cover-track/don toliver.jpg"
+                        alt="cover-track"
+                      />
+                    </div>
+                    <div class="track-name">
+                      <div class="name">
+                        <p id="track-name-1">If Looks Could Kill</p>
+                        <span id="explicit-icon"
+                          ><i class="fa-solid fa-circle-exclamation"></i
+                        ></span>
+                      </div>
+                      <div class="artist">
+                        <p id="track-artist-1">Destroy Lonely</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="track-duration">
+                  <p id="track-duration-1">03:14</p>
+                </div>
+              </div>
+              <div class="musick-list-item-content-2">
+                <div class="track-info">
+                  <div class="id-track">2</div>
+                  <div class="track__main-info">
+                    <div class="cover-track">
+                      <img
+                        id="cover-track-2"
+                        src="assets/cover-track/met gala Gunna.jpg"
+                        alt="cover-track"
+                      />
+                    </div>
+                    <div class="track-name">
+                      <div class="name">
+                        <p id="track-name-2">Met Gala</p>
+                        <span id="explicit-icon"
+                          ><i class="fa-solid fa-circle-exclamation"></i
+                        ></span>
+                      </div>
+                      <div class="artist"><p id="track-artist-2">Gunna</p></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="track-duration">
+                  <p id="track-duration-2">02:29</p>
+                </div>
+              </div>
+              <div class="musick-list-item-content-3">
+                <div class="track-info">
+                  <div class="id-track">3</div>
+                  <div class="track__main-info">
+                    <div class="cover-track">
+                      <img
+                        id="cover-track-3"
+                        src="assets/cover-track/magnolia playboi carty.webp"
+                        alt="cover-track"
+                      />
+                    </div>
+                    <div class="track-name">
+                      <div class="name">
+                        <p id="track-name-3">Magnolia</p>
+                        <span id="explicit-icon"
+                          ><i class="fa-solid fa-circle-exclamation"></i
+                        ></span>
+                      </div>
+                      <div class="artist">
+                        <p id="track-artist-3">Playboy Carti</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="track-duration">
+                  <p id="track-duration-3">02:50</p>
+                </div>
+              </div>
+              <div class="musick-list-item-content-4">
+                <div class="track-info">
+                  <div class="id-track">4</div>
+                  <div class="track__main-info">
+                    <div class="cover-track">
+                      <img
+                        id="cover-track-4"
+                        src="assets/cover-track/is there some else.jpg"
+                        alt="cover-track"
+                      />
+                    </div>
+                    <div class="track-name">
+                      <div class="name">
+                        <p id="track-name-4">Is There Some Else</p>
+                        <span id="explicit-icon"
+                          ><i class="fa-solid fa-circle-exclamation"></i
+                        ></span>
+                      </div>
+                      <div class="artist">
+                        <p id="track-artist-4">The Weeknd</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="track-duration">
+                  <p id="track-duration-4">03:19</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="mini-player">
+          <div class="mini-player-content">
+            <div class="mini-player-cover">
+              <div class="cover__track">
+                <div class="cover">
+                  <img id="cover-track-player" src="" alt="cover-track" />
+                </div>
+                <div class="track__name">
+                  <div class="name">
+                    <p id="track-name-player" translate="no"></p>
+                    <span id="explicit-icon-player"
+                      ><i class="fa-solid fa-circle-exclamation"></i
+                    ></span>
+                  </div>
+                  <div class="artist">
+                    <p id="track-artist-player" translate="no"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mini-player-controls">
+              <div class="mini-player-controls-button">
+                <div class="mini-player-controls-button-track">
+                  <div class="button-prev">
+                    <i class="fa-solid fa-backward-step"></i>
+                  </div>
+                  <div class="button-play">
+                    <i class="fa-solid fa-play"></i>
+                  </div>
+                  <div class="button-next">
+                    <i class="fa-solid fa-forward-step"></i>
+                  </div>
+                </div>
+                <div class="mini-player-bar">
+                  <div class="time-current">00:00</div>
+                  <div class="progress-bar">
+                    <div class="progress-bar-fill"></div>
+                    <div class="progress-bar-progress"></div>
+                  </div>
+                  <div class="time-duration">00:00</div>
+                </div>
+              </div>
+            </div>
+            <div class="mini-player-button-container">
+              <div class="mini-player-volume">
+                <div class="volume-icon">
+                  <i class="fa-solid fa-volume-high"></i>
+                </div>
+                <div class="volume-slider">
+                  <div class="volume-slider-progress"></div>
+                </div>
+              </div>
+              <div class="button-container">
+                <div class="replay-button">
+                  <button
+                    type="button"
+                    class="replay-button-button"
+                    title="Повторить"
+                    id="replay-button"
+                  >
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                  </button>
+                </div>
+                <div class="shuffle-button">
+                  <button
+                    type="button"
+                    class="shuffle-button-button"
+                    title="Перемешать"
+                    id="shuffle-button"
+                  >
+                    <i class="fa-solid fa-shuffle"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="app/app.js" type="module"></script>
+    <script src="app/fullscreen.js" type="module"></script>
+  </body>
+</html>
